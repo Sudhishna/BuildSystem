@@ -1,7 +1,6 @@
 import subprocess
 import sys
 import getpass
-import git
 import os
 import time
 
