@@ -37,5 +37,8 @@ line_prepender("/etc/apt/sources.list", "deb http://ppa.launchpad.net/ansible/an
 print("\n\n      ########  Installing Ansible and its modules  ########")
 subprocess.call(['./installations_2.sh'])
 
+if not os.path.exists(SSH_KEYGEN_DIR):
+    os.makedirs(SSH_KEYGEN_DIR)
+
 subprocess.call(['python3','setup-config.py',DEV_USER,PW])
 
