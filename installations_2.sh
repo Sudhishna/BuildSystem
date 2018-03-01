@@ -10,5 +10,3 @@ sudo apt-get install ansible -y
 ansible-galaxy install Juniper.junos,1.4.3
 
 sudo rm -rf EVPN-VXLAN/
-
-mkdir /home/lab/.ssh
