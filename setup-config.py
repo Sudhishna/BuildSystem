@@ -105,6 +105,14 @@ def accept_ssh_keys(devInfo="PodInfo.txt"):
             fil.close()
         time.sleep(3)
 
+def countdown(t):
+    while t:
+        mins, secs = divmod(t, 60)
+        timeformat = '{:02d}:{:02d}'.format(mins, secs)
+        print(timeformat, end='\r')
+        time.sleep(1)
+        t -= 1
+
 print("\n\n      ########  Update the /etc/hosts file to match your network  ########")
 config_devices()
 
@@ -121,5 +129,7 @@ config_ssh_keys()
 print("\n\n      ########  Accept the key from networking devices  ########")
 accept_ssh_keys()
 subprocess.call(['./installations_3.sh'])
+
+countdown(40)
 
 print("\n\n      #####  AUTOMATION SYSTEM IS READY   #####")
