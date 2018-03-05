@@ -27,6 +27,11 @@ def line_prepender(filename, line):
     command = 'sudo mv tempfile.tmp ' + filename
     os.system('echo %s|sudo -S %s' % (PW, command))
 
+def make_executable(path):
+    mode = os.stat(path).st_mode
+    mode |= (mode & 0o444) >> 2    # copy R bits to X
+    os.chmod(path, mode)
+    
 def config_devices(podInfo='PodInfo.txt'):
     with open(podInfo, 'r') as f:
         devices = f.readlines()
@@ -100,10 +105,12 @@ def accept_ssh_keys(devInfo="PodInfo.txt"):
             if "Pod Number" not in device:
                 accept_keys += "ssh-keygen -R {}\nssh-keyscan -H {} >> ~/.ssh/known_hosts\n\n".format(device,device)
         print("{}".format(accept_keys))
-        with open(HOME_DIR + "installations_3.sh", "wt") as fil:
+        with open(HOME_DIR + "/BuildSystem/installations_3.sh", "wt") as fil:
             fil.write(accept_keys)
             fil.close()
         time.sleep(3)
+        
+        make_executable(HOME_DIR + "/BuildSystem/installations_3.sh")
 
 def countdown(t):
     while t:
