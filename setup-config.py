@@ -40,7 +40,7 @@ def config_devices(podInfo='PodInfo.txt'):
         podNum = ""
         hosts = ""
         for device in devices:
-            if "Pod Number" in device:
+            if "PodNumber" in device:
                 podKey,podValue = device.split(":")
                 podNum = "pod" + podValue.strip()
             else:
@@ -68,7 +68,7 @@ def config_ssh_keys(devInfo="PodInfo.txt"):
         CONFIG_FILE = 'tempfile.conf'
 
         for device in devices:
-            if "Pod Number" not in device:
+            if "PodNumber" not in device:
                 dev = Device(host=device, user=DEV_USER, password=PW).open()
                 with Config(dev) as cu:
                     cu.load(template_path=CONFIG_FILE, format='set', merge=True)
@@ -87,7 +87,7 @@ def push_key(devInfo="PodInfo.txt"):
         devices = [x.strip() for x in devices]
 
         for device in devices:
-            if "Pod Number" not in device:
+            if "PodNumber" not in device:
                 command = "sshpass -p '" + PW + "' ssh-copy-id " + DEV_USER + "@" + device
                 print(command)
                 subprocess.call(command, shell=True)
