@@ -9,4 +9,4 @@ sudo apt-get install ansible -y
 # Install Ansible modules
 ansible-galaxy install Juniper.junos,1.4.3
 
-sudo rm -rf ~/EVPN-VXLAN
+rm -rf ~/EVPN-VXLAN
