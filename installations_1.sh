@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # To get the latest package lists 
-sudo apt-get update && sudo apt-get upgrade -y
+sudo apt-get update -y && sudo apt-get upgrade -y
 
 # Install Python
 sudo apt-get install python-pip python-dev libxml2-dev libxslt-dev libssl-dev libffi-dev -y
