@@ -116,7 +116,7 @@ def accept_ssh_keys(devInfo="PodInfo.txt"):
 
         accept_keys = "#!/bin/sh\n\n# Accept the SSH Keys\n"
         for device in devices:
-            if "Pod Number" not in device:
+            if "PodNumber" not in device:
                 accept_keys += "ssh-keygen -R {}\nssh-keyscan -H {} >> ~/.ssh/known_hosts\n\n".format(device,device)
         print("{}".format(accept_keys))
         with open(HOME_DIR + "/BuildSystem/installations_3.sh", "wt") as fil:
