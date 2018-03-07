@@ -64,6 +64,7 @@ def config_ssh_keys(devInfo="PodInfo.txt"):
         ssh_key_conf = 'set system login user {} uid 2018\nset system login user {} class super-user\nset system login user {} authentication ssh-rsa "{}"'.format(VM_USER,VM_USER,VM_USER,sshKey)
         with open('tempfile.conf', 'wt') as outf:
             outf.write(ssh_key_conf)
+        print("{}".format(ssh_key_conf))
 
         CONFIG_FILE = 'tempfile.conf'
 
