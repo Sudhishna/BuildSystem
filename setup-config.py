@@ -72,7 +72,7 @@ def config_ssh_keys(devInfo="PodInfo.txt"):
             if "PodNumber" not in device:
                 dev = Device(host=device, user=DEV_USER, password=PW).open()
                 with Config(dev) as cu:
-                    cu.load(template_path=CONFIG_FILE, format='set', merge=True)
+                    cu.load(template_path=CONFIG_FILE, format='set', merge=True, ignore_warning=True)
                     cu.commit(timeout=30)
                     print("Committing the configuration on device: {}".format(device))
                 dev.close()
