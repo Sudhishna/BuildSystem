@@ -146,7 +146,6 @@ gen_key()
 
 print("\n\n      ########  Push User Login Configs to the devices  ########")
 config_ssh_keys()
-#push_key()
 
 print("\n\n      ########  Accept the key from networking devices  ########")
 accept_ssh_keys()
