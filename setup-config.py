@@ -80,19 +80,6 @@ def config_ssh_keys(devInfo="PodInfo.txt"):
     command = 'sudo rm tempfile.conf'
     os.system('echo %s|sudo -S %s' % (PW, command))
 
-def push_key(devInfo="PodInfo.txt"):
-    """Push SSH Key to a remote server."""
-
-    with open(devInfo, 'r') as f:
-        devices = f.readlines()
-        devices = [x.strip() for x in devices]
-
-        for device in devices:
-            if "PodNumber" not in device:
-                command = "sshpass -p '" + PW + "' ssh-copy-id " + DEV_USER + "@" + device
-                print(command)
-                subprocess.call(command, shell=True)
-
 def key_present():
     """Checks to see if there is an RSA already present. Returns a bool."""
     if "id_rsa" in os.listdir(SSH_KEYGEN_DIR):
