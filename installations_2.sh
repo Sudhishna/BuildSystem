@@ -4,13 +4,13 @@
 sudo -H pip install --upgrade pip
 sudo -H pip install setuptools --upgrade
 sudo -H pip install pyopenssl ndg-httpsclient pyasn1
-sudo -H pip install ansible
 sudo -H pip install junos-eznc
 sudo -H pip install jxmlease
 sudo -H pip install gitpython
+pip install ansible
 
 # Install Ansible modules
-sudo ansible-galaxy install Juniper.junos
+ansible-galaxy install Juniper.junos
 
 # Install PIP3 packages
 sudo apt-get install python3-pip -y
