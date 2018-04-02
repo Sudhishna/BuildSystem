@@ -39,6 +39,9 @@ subprocess.call(['./installations_2.sh'])
 
 if not os.path.exists(SSH_KEYGEN_DIR):
     os.makedirs(SSH_KEYGEN_DIR)
+    
+py_version = sys.version
+python_version = py_version.split(".")[0]
+py_ver = "python" + python_version
 
-subprocess.call(['python3','setup-config.py',DEV_USER,PW])
-
+subprocess.call([py_ver,'setup-config.py',DEV_USER,PW])
