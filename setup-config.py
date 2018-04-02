@@ -141,6 +141,6 @@ accept_ssh_keys()
 subprocess.call(['./installations_3.sh'])
 
 print("\n\n      ########  Wait for the VM and the devices to stablize  ########")
-countdown(60)
+countdown(120)
 
 print("\n\n      #####  AUTOMATION SYSTEM IS READY   #####")
