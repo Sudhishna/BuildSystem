@@ -7,7 +7,7 @@ sudo -H pip install pyopenssl ndg-httpsclient pyasn1
 sudo -H pip install junos-eznc
 sudo -H pip install jxmlease
 sudo -H pip install gitpython
-sudo pip install ansible
+sudo -H pip install ansible
 
 # Install Ansible modules
 ansible-galaxy install Juniper.junos
