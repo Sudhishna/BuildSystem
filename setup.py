@@ -6,6 +6,8 @@ import time
 
 if sys.stdin.isatty():
     print("Enter credentials")
+    try: input = raw_input
+    except NameError: pass
     jnprusername = input("Lab Device Username: ")
     jnprpassword = getpass.getpass("Lab Device Password: ")
 else:
