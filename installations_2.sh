@@ -17,3 +17,4 @@ rm -rf ~/EVPN-VXLAN
 # Install PIP3 packages
 sudo apt-get install python3-pip -y
 sudo -H pip3 install junos-eznc
+sudo -H pip3 install gitpython
