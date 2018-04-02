@@ -34,8 +34,6 @@ def line_prepender(filename, line):
 print("\n\n      ########  Making initial Installations  ########")
 subprocess.call(['./installations_1.sh'])
 
-line_prepender("/etc/apt/sources.list", "deb http://ppa.launchpad.net/ansible/ansible/ubuntu xenial main")
-
 print("\n\n      ########  Installing Ansible and its modules  ########")
 subprocess.call(['./installations_2.sh'])
 
