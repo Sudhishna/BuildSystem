@@ -12,11 +12,4 @@ pip install ansible
 # Install Ansible modules
 ansible-galaxy install Juniper.junos
 
-# Install PIP3 packages
-sudo apt-get install python3-pip -y
-sudo -H pip3 install --upgrade pip
-sudo -H pip3 install junos-eznc
-sudo -H pip3 install jxmlease
-sudo -H pip3 install gitpython
-
 rm -rf ~/EVPN-VXLAN
