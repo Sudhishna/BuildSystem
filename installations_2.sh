@@ -13,3 +13,7 @@ sudo pip install ansible
 ansible-galaxy install Juniper.junos
 
 rm -rf ~/EVPN-VXLAN
+
+# Install PIP3 packages
+sudo apt-get install python3-pip -y
+sudo -H pip3 install junos-eznc
