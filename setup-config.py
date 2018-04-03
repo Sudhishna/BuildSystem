@@ -133,12 +133,12 @@ print("EVPN-VXLAN Ansible Project cloned")
 print("\n\n      ########  Generate SSH Key  ########")
 gen_key()
 
-print("\n\n      ########  Push User Login Configs to the devices  ########")
-config_ssh_keys()
-
 print("\n\n      ########  Accept the key from networking devices  ########")
 accept_ssh_keys()
 subprocess.call(['./installations_3.sh'])
+
+print("\n\n      ########  Push User Login Configs to the devices  ########")
+config_ssh_keys()
 
 print("\n\n      ########  Wait for the VM and the devices to stablize  ########")
 countdown(120)
