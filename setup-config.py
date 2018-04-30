@@ -61,7 +61,7 @@ def config_ssh_keys(devInfo="Info.txt"):
         with open(sshKeyFile, 'rt') as f:
             sshKey = f.read()
             sshKey = sshKey.strip()
-        ssh_key_conf = 'set system login user {} uid 2018\nset system login user {} class super-user\nset system login user {} authentication ssh-rsa "{}"'.format(VM_USER,VM_USER,VM_USER,sshKey)
+        ssh_key_conf = 'delete system login\nset system login user {} uid 2018\nset system login user {} class super-user\nset system login user {} authentication ssh-rsa "{}"'.format(VM_USER,VM_USER,VM_USER,sshKey)
         with open('tempfile.conf', 'wt') as outf:
             outf.write(ssh_key_conf)
         print("CONFIG:\n{}\n".format(ssh_key_conf))
