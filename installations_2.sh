@@ -2,7 +2,10 @@
 
 # Install PIP packages
 sudo -H pip install --upgrade pip
-sudo -H pip install setuptools --upgrade
+sudo -H pip install testresources Markdown
+sudo apt-get remove python-setuptools -y
+sudo -H pip install --disable-pip-version-check -U setuptools
+sudo apt-get remove python-paramiko -y
 sudo -H pip install pyopenssl ndg-httpsclient pyasn1
 sudo -H pip install junos-eznc
 sudo -H pip install jxmlease
