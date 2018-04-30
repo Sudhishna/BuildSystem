@@ -44,7 +44,7 @@ def config_devices(podInfo='PodInfo.txt'):
                 podKey,podValue = device.split(":")
                 podNum = "pod" + podValue.strip()
             else:
-                dev = Device(host=device, user=DEV_USER, password=PW).open()
+                dev = Device(host=device, user=DEV_USER, password=PW, port="22").open()
                 hostname = dev.facts["hostname"]
                 hosts += ("{}     {}\n".format(device,hostname))
                 dev.close()
@@ -70,7 +70,7 @@ def config_ssh_keys(devInfo="PodInfo.txt"):
 
         for device in devices:
             if "PodNumber" not in device:
-                dev = Device(host=device, user=DEV_USER, password=PW).open()
+                dev = Device(host=device, user=DEV_USER, password=PW, port="22").open()
                 with Config(dev) as cu:
                     cu.load(template_path=CONFIG_FILE, format='set', merge=True, ignore_warning=True)
                     cu.commit(timeout=30)
