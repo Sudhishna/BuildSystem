@@ -32,7 +32,7 @@ def make_executable(path):
     mode |= (mode & 0o444) >> 2    # copy R bits to X
     os.chmod(path, mode)
     
-def config_devices(podInfo='PodInfo.txt'):
+def config_devices(podInfo='Info.txt'):
     with open(podInfo, 'r') as f:
         devices = f.readlines()
         devices = [x.strip() for x in devices]
@@ -51,7 +51,7 @@ def config_devices(podInfo='PodInfo.txt'):
         print("{}".format(hosts))
         line_prepender("/etc/hosts", hosts)
 
-def config_ssh_keys(devInfo="PodInfo.txt"):
+def config_ssh_keys(devInfo="Info.txt"):
     with open(devInfo, 'r') as f:
         devices = f.readlines()
         devices = [x.strip() for x in devices]
