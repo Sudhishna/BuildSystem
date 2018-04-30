@@ -96,7 +96,7 @@ def gen_key():
         command = "ssh-keygen -f /home/" + VM_USER +"/.ssh/id_rsa -N ''"
         subprocess.call(command, shell=True)
 
-def accept_ssh_keys(devInfo="PodInfo.txt"):
+def accept_ssh_keys(devInfo="Info.txt"):
     with open(devInfo, 'r') as f:
         devices = f.readlines()
         devices = [x.strip() for x in devices]
