@@ -127,7 +127,7 @@ print("\n\n      ########  Update the /etc/hosts file to match your network  ###
 config_devices()
 
 print("\n\n      ########  Clone the GIT Project Repository  ########")
-git.Git(HOME_DIR).clone("https://github.com/Sudhishna/EVPN-VXLAN.git")
+git.Git(HOME_DIR).clone("https://github.com/Sudhishna/EVPN-VXLAN-Partners.git")
 print("EVPN-VXLAN Ansible Project cloned")
 
 print("\n\n      ########  Generate SSH Key  ########")
