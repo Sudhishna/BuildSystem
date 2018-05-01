@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Install PIP packages
-sudo -H pip install --upgrade pip
+sudo -H pip install -i https://pypi.python.org/simple/ --upgrade pip
 sudo -H pip install testresources Markdown
 sudo apt-get remove python-setuptools -y
 sudo -H pip install --disable-pip-version-check -U setuptools
